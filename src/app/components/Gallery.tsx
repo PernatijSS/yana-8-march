@@ -25,8 +25,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 1,
     image: '/images/1.jpg',
-    title: 'Фото 1',
-    description: 'Изображение из папки public/images/1.jpg.',
+    title: 'Чилл',
+    description:
+      'Желаю тебе, чтобы находить время на отдых, кайфовать даже в самые загруженные дни',
     position: {
       desktop: { left: '4%', top: '14%' },
       mobile: { left: '4%', top: '18%' }
@@ -42,8 +43,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 2,
     image: '/images/2.jpg',
-    title: 'Фото 2',
-    description: 'Изображение из папки public/images/2.jpg.',
+    title: 'Настроение',
+    description:
+      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые трутые товары с ломоды были только у тебя',
     position: {
       desktop: { left: '21%', top: '4%' },
       mobile: { left: '30%', top: '8%' }
@@ -59,8 +61,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 3,
     image: '/images/3.jpg',
-    title: 'Фото 3',
-    description: 'Изображение из папки public/images/3.jpg.',
+    title: 'Balance',
+    description:
+      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый work-life balance',
     position: {
       desktop: { left: '39%', top: '10%' },
       mobile: { left: '52%', top: '14%' }
@@ -76,8 +79,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 4,
     image: '/images/4.jpg',
-    title: 'Фото 4',
-    description: 'Изображение из папки public/images/4.jpg.',
+    title: 'Вайб',
+    description:
+      'Оставайся такой же яркой, вайбовой и живой. Не останавливайся, в тебе очень много крутого, что я люблю',
     position: {
       desktop: { left: '58%', top: '7%' },
       mobile: { left: '70%', top: '7%' }
@@ -93,8 +97,8 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 5,
     image: '/images/5.jpg',
-    title: 'Фото 5',
-    description: 'Изображение из папки public/images/5.jpg.',
+    title: 'Love',
+    description: 'Ты для меня очень ценна. Знай, ты самая лучшая',
     position: {
       desktop: { left: '77%', top: '16%' },
       mobile: { left: '76%', top: '26%' }
@@ -110,8 +114,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 6,
     image: '/images/6.jpg',
-    title: 'Фото 6',
-    description: 'Изображение из папки public/images/6.jpg.',
+    title: 'Fire',
+    description:
+      'Ты очень сексуальная, притягательная и живая. Хочу, чтобы ты всегда чувствовала это в себе и никогда не забывала, какая ты',
     position: {
       desktop: { left: '11%', top: '53%' },
       mobile: { left: '14%', top: '42%' }
@@ -127,8 +132,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 7,
     image: '/images/7.jpg',
-    title: 'Фото 7',
-    description: 'Изображение из папки public/images/7.jpg.',
+    title: 'Роскошь',
+    description:
+      'Желаю тебе красивой жизни, внутреннего спокойствия, удовольствия от мелочей и чтобы всё, чего ты хочешь, постепенно становилось твоим',
     position: {
       desktop: { left: '32%', top: '48%' },
       mobile: { left: '42%', top: '36%' }
@@ -144,8 +150,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 8,
     image: '/images/8.jpg',
-    title: 'Фото 8',
-    description: 'Изображение из папки public/images/8.jpg.',
+    title: 'Между нами',
+    description:
+      'Мне очень нравится то, что есть между нами, а именно вайб, притяжение, и ощущение чего-то своего.....',
     position: {
       desktop: { left: '47%', top: '55%' },
       mobile: { left: '64%', top: '46%' }
@@ -161,8 +168,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 9,
     image: '/images/9.jpg',
-    title: 'Фото 9',
-    description: 'Изображение из папки public/images/9.jpg.',
+    title: 'Фокус',
+    description:
+      'Желаю, чтобы работа приносила тебе не только результат, но и удовольствие, а особбено желаю сил в менеджерских вопросиках)))',
     position: {
       desktop: { left: '69%', top: '52%' },
       mobile: { left: '12%', top: '66%' }
@@ -178,8 +186,9 @@ const heroGalleryItems: GalleryItem[] = [
   {
     id: 10,
     image: '/images/10.jpg',
-    title: 'Фото 10',
-    description: 'Изображение из папки public/images/10.jpg.',
+    title: 'Нежность',
+    description:
+      'Хочется, чтобы у тебя всегда были такие моменты тишины, музыки, уюта и тепла, в которых можно просто быть собой и чувствовать себя хорошо',
     position: {
       desktop: { left: '84%', top: '50%' },
       mobile: { left: '58%', top: '64%' }
@@ -198,8 +207,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 101,
     image: '/images/1.jpg',
-    title: 'Фото 1',
-    description: 'Изображение из папки public/images/1.jpg.',
+    title: 'Чилл',
+    description:
+      'Желаю тебе, чтобы находить время на отдых, кайфовать даже в самые загруженные дни.',
     position: {
       desktop: { left: '8%', top: '20%' },
       mobile: { left: '6%', top: '10%' }
@@ -215,8 +225,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 102,
     image: '/images/2.jpg',
-    title: 'Фото 2',
-    description: 'Изображение из папки public/images/2.jpg.',
+    title: 'Настроение',
+    description:
+      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы мода всегда помогала тебе выражать себя.',
     position: {
       desktop: { left: '25%', top: '8%' },
       mobile: { left: '38%', top: '2%' }
@@ -232,8 +243,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 103,
     image: '/images/3.jpg',
-    title: 'Фото 3',
-    description: 'Изображение из папки public/images/3.jpg.',
+    title: 'Balance',
+    description:
+      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый work-life balance.',
     position: {
       desktop: { left: '40%', top: '16%' },
       mobile: { left: '67%', top: '10%' }
@@ -249,8 +261,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 104,
     image: '/images/4.jpg',
-    title: 'Фото 4',
-    description: 'Изображение из папки public/images/4.jpg.',
+    title: 'Вайб',
+    description:
+      'Оставайся такой же яркой, вайбовой и живой. Не останавливайся — в тебе очень много крутого, настоящего и цепляющего.',
     position: {
       desktop: { left: '67%', top: '10%' },
       mobile: { left: '18%', top: '32%' }
@@ -266,8 +279,8 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 105,
     image: '/images/5.jpg',
-    title: 'Фото 5',
-    description: 'Изображение из папки public/images/5.jpg.',
+    title: 'Love',
+    description: 'Ты для меня очень ценна. И знай: ты самая лучшая.',
     position: {
       desktop: { left: '82%', top: '23%' },
       mobile: { left: '54%', top: '28%' }
@@ -283,8 +296,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 106,
     image: '/images/6.jpg',
-    title: 'Фото 6',
-    description: 'Изображение из папки public/images/6.jpg.',
+    title: 'Fire',
+    description:
+      'Ты очень сексуальная, притягательная и живая. Хочу, чтобы ты всегда чувствовала это в себе и никогда не забывала, какая ты.',
     position: {
       desktop: { left: '15%', top: '55%' },
       mobile: { left: '12%', top: '56%' }
@@ -300,8 +314,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 107,
     image: '/images/7.jpg',
-    title: 'Фото 7',
-    description: 'Изображение из папки public/images/7.jpg.',
+    title: 'Роскошь',
+    description:
+      'Желаю тебе красивой жизни, внутреннего спокойствия, удовольствия от мелочей и чтобы всё, чего ты хочешь, постепенно становилось твоим.',
     position: {
       desktop: { left: '41%', top: '58%' },
       mobile: { left: '49%', top: '52%' }
@@ -317,8 +332,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 108,
     image: '/images/8.jpg',
-    title: 'Фото 8',
-    description: 'Изображение из папки public/images/8.jpg.',
+    title: 'Между нами',
+    description:
+      'Мне очень нравится то, что есть между нами: этот вайб, это притяжение, это ощущение чего-то своего и особенного.',
     position: {
       desktop: { left: '55%', top: '46%' },
       mobile: { left: '70%', top: '62%' }
@@ -334,8 +350,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 109,
     image: '/images/9.jpg',
-    title: 'Фото 9',
-    description: 'Изображение из папки public/images/9.jpg.',
+    title: 'Фокус',
+    description:
+      'Желаю, чтобы работа приносила тебе не только результат, но и удовольствие, развитие, уверенность в себе и ощущение, что ты на своём месте.',
     position: {
       desktop: { left: '74%', top: '60%' },
       mobile: { left: '22%', top: '76%' }
@@ -351,8 +368,9 @@ const altGalleryItems: GalleryItem[] = [
   {
     id: 110,
     image: '/images/10.jpg',
-    title: 'Фото 10',
-    description: 'Изображение из папки public/images/10.jpg.',
+    title: 'Нежность',
+    description:
+      'Хочется, чтобы у тебя всегда были такие моменты тишины, музыки, уюта и тепла, в которых можно просто быть собой и чувствовать себя хорошо.',
     position: {
       desktop: { left: '87%', top: '52%' },
       mobile: { left: '58%', top: '82%' }
@@ -472,10 +490,6 @@ export function Gallery() {
     const modalWidth = isMobile ? window.innerWidth - 32 : 280;
     const modalHeight = 220;
 
-    /**
-     * Безопасная верхняя зона:
-     * здесь живёт верхняя кнопка, поэтому модалке туда нельзя.
-     */
     const safeTopOffset = isMobile ? 110 : 24;
     const safeSideOffset = 16;
     const safeBottomOffset = 16;

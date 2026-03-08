@@ -53,7 +53,7 @@ const heroGalleryItems: GalleryItem[] = [
     image: `${base}images/2.jpg`,
     title: 'Настроение',
     description:
-      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые крутые вещи с ламоды были только у тебя.',
+      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые крутые вещи с ламоды были только у тебя',
     position: {
       desktop: { left: '21%', top: '4%' },
       mobile: { left: '30%', top: '8%' }
@@ -89,7 +89,7 @@ const heroGalleryItems: GalleryItem[] = [
     image: `${base}images/4.jpg`,
     title: 'Вайб',
     description:
-      'Оставайся такой же +вайбик.',
+      'Оставайся такой же +вайбик',
     position: {
       desktop: { left: '58%', top: '7%' },
       mobile: { left: '70%', top: '7%' }
@@ -271,7 +271,7 @@ const altGalleryItems: GalleryItem[] = [
     image: `${base}images/4.jpg`,
     title: 'Вайб',
     description:
-      'Оставайся такой же яркой, вайбовой и живой. Не останавливайся — в тебе очень много крутого, что я люблю',
+      'Оставайся такой же +вайбик',
     position: {
       desktop: { left: '67%', top: '10%' },
       mobile: { left: '18%', top: '32%' }
@@ -288,7 +288,7 @@ const altGalleryItems: GalleryItem[] = [
     id: 105,
     image: `${base}images/5.jpg`,
     title: 'Love',
-    description: 'Ты для меня очень ценна. Знай: ты самая лучшая',
+    description: 'Ты для меня очень ценна. Знай, ты самая лучшая',
     position: {
       desktop: { left: '82%', top: '23%' },
       mobile: { left: '54%', top: '28%' }

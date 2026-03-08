@@ -32,19 +32,8 @@ export function GalleryCard({
   mousePosition,
   onOpenModal
 }: GalleryCardProps) {
-  /**
-   * hover-эффект для десктопа
-   */
   const [isHovered, setIsHovered] = useState(false);
-
-  /**
-   * небольшое движение карточек от мышки на десктопе
-   */
   const [parallaxOffset, setParallaxOffset] = useState({ x: 0, y: 0 });
-
-  /**
-   * определяем мобильный экран
-   */
   const [isMobile, setIsMobile] = useState(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -60,9 +49,6 @@ export function GalleryCard({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  /**
-   * Лёгкий параллакс только на десктопе
-   */
   useEffect(() => {
     if (!cardRef.current || isMobile) return;
 
@@ -80,18 +66,19 @@ export function GalleryCard({
     });
   }, [mousePosition, isMobile, zIndex]);
 
-  /**
-   * По клику открываем модалку.
-   * На мобилке — чуть выше карточки,
-   * на десктопе — справа от неё.
-   */
   const handleClick = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
+    const isMobileViewport = window.innerWidth <= 768;
 
-    if (window.innerWidth <= 768) {
+    if (isMobileViewport) {
+      /**
+       * На мобилке открываем модалку НИЖЕ карточки.
+       * Если карточка очень низко, Gallery.tsx сам подожмёт её вверх,
+       * но уже с учётом безопасной зоны сверху.
+       */
       onOpenModal(title, description, {
-        x: Math.max(16, rect.left - 8),
-        y: rect.top - 170
+        x: 16,
+        y: rect.bottom + 12
       });
       return;
     }

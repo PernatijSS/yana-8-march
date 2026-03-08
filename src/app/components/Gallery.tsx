@@ -21,10 +21,6 @@ interface GalleryItem {
   rotation?: number;
 }
 
-/**
- * ПЕРВАЯ РАСКЛАДКА ФОТО
- * Это одна композиция карточек на экран.
- */
 const heroGalleryItems: GalleryItem[] = [
   {
     id: 1,
@@ -198,10 +194,6 @@ const heroGalleryItems: GalleryItem[] = [
   }
 ];
 
-/**
- * ВТОРАЯ РАСКЛАДКА ФОТО
- * Нужна, чтобы следующая "страница" выглядела не точной копией.
- */
 const altGalleryItems: GalleryItem[] = [
   {
     id: 101,
@@ -386,16 +378,8 @@ export function Gallery() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  /**
-   * Сколько экранов рендерим в ленте.
-   * Чем больше число — тем спокойнее работает "бесконечность".
-   */
   const LOOP_BLOCK_COUNT = 10;
 
-  /**
-   * Собираем ленту из чередующихся секций:
-   * hero, alt, hero, alt...
-   */
   const sections = useMemo(
     () =>
       Array.from({ length: LOOP_BLOCK_COUNT }, (_, index) =>
@@ -404,9 +388,6 @@ export function Gallery() {
     []
   );
 
-  /**
-   * Для лёгкого движения карточек на десктопе.
-   */
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -417,11 +398,6 @@ export function Gallery() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  /**
-   * При первом открытии ставим пользователя не в самое начало,
-   * а примерно в середину ленты.
-   * Тогда можно крутить и вниз, и вверх.
-   */
   useEffect(() => {
     const initPosition = () => {
       const viewportHeight = window.innerHeight;
@@ -438,13 +414,6 @@ export function Gallery() {
     return () => window.clearTimeout(timeout);
   }, []);
 
-  /**
-   * Логика бесконечного скролла.
-   *
-   * Когда пользователь слишком близко подходит к верху или низу,
-   * мы мгновенно переносим его обратно в центральную часть.
-   * За счёт этого визуально кажется, что скролл бесконечный.
-   */
   useEffect(() => {
     let isJumping = false;
 
@@ -494,25 +463,31 @@ export function Gallery() {
     };
   }, []);
 
-  /**
-   * Открытие модалки рядом с карточкой.
-   */
   const handleOpenModal = (
     title: string,
     description: string,
     position: { x: number; y: number }
   ) => {
-    const modalWidth = window.innerWidth <= 768 ? window.innerWidth - 32 : 320;
+    const isMobile = window.innerWidth <= 768;
+    const modalWidth = isMobile ? window.innerWidth - 32 : 280;
     const modalHeight = 220;
 
+    /**
+     * Безопасная верхняя зона:
+     * здесь живёт верхняя кнопка, поэтому модалке туда нельзя.
+     */
+    const safeTopOffset = isMobile ? 110 : 24;
+    const safeSideOffset = 16;
+    const safeBottomOffset = 16;
+
     const adjustedX = Math.min(
-      Math.max(position.x, 16),
-      window.innerWidth - modalWidth - 16
+      Math.max(position.x, safeSideOffset),
+      window.innerWidth - modalWidth - safeSideOffset
     );
 
     const adjustedY = Math.min(
-      Math.max(position.y, 16),
-      window.innerHeight - modalHeight - 16
+      Math.max(position.y, safeTopOffset),
+      window.innerHeight - modalHeight - safeBottomOffset
     );
 
     setModalData({

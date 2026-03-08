@@ -253,7 +253,7 @@ const altGalleryItems: GalleryItem[] = [
     image: `${base}images/3.jpg`,
     title: 'Balance',
     description:
-      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый ворк лайв баланс',
+      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый волк лайв баланс)',
     position: {
       desktop: { left: '40%', top: '16%' },
       mobile: { left: '67%', top: '10%' }
@@ -342,7 +342,7 @@ const altGalleryItems: GalleryItem[] = [
     image: `${base}images/8.jpg`,
     title: 'Между нами',
     description:
-      'Мне очень нравится то, что есть между нами: вайб, притяжение и ощущение чего-то своего',
+      'Я очень ценю то, что есть между...',
     position: {
       desktop: { left: '55%', top: '46%' },
       mobile: { left: '70%', top: '62%' }

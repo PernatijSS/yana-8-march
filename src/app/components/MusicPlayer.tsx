@@ -63,7 +63,7 @@ export function MusicPlayer() {
         >
           <div className="flex items-center gap-3 pr-2">
             <span className="text-white/70 text-sm whitespace-nowrap" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Atmosphere
+              Sleep Token - Caramel
             </span>
             <input
               type="range"
@@ -78,9 +78,9 @@ export function MusicPlayer() {
         </motion.div>
       </div>
       {/* Mock audio element */}
-      <audio ref={audioRef} loop>
-        {/* In production, add actual audio source here */}
-      </audio>
+<audio ref={audioRef} loop>
+  <source src="/music/Sleep Token - Caramel.mp3" type="audio/mpeg" />
+</audio>
     </motion.div>
   );
 }

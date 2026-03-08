@@ -21,13 +21,21 @@ interface GalleryItem {
   rotation?: number;
 }
 
+/**
+ * ВАЖНО ДЛЯ GITHUB PAGES
+ * Все файлы из public нужно собирать через BASE_URL,
+ * чтобы пути работали не только локально, но и на:
+ * /yana-8-march/
+ */
+const base = import.meta.env.BASE_URL;
+
 const heroGalleryItems: GalleryItem[] = [
   {
     id: 1,
-    image: '/images/1.jpg',
+    image: `${base}images/1.jpg`,
     title: 'Чилл',
     description:
-      'Желаю тебе всегда находить время на отдых, кайфовать даже в самые загруженные дни.',
+      'Желаю тебе всегда находить время на отдых, кайфовать даже в самые загруженные дни',
     position: {
       desktop: { left: '4%', top: '14%' },
       mobile: { left: '4%', top: '18%' }
@@ -42,10 +50,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 2,
-    image: '/images/2.jpg',
+    image: `${base}images/2.jpg`,
     title: 'Настроение',
     description:
-      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые крутые вещи с Lamoda были только у тебя.',
+      'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые крутые вещи с ламоды были только у тебя.',
     position: {
       desktop: { left: '21%', top: '4%' },
       mobile: { left: '30%', top: '8%' }
@@ -60,10 +68,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    image: '/images/3.jpg',
+    image: `${base}images/3.jpg`,
     title: 'Balance',
     description:
-      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый work-life balance.',
+      'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый волк лайв баланс)',
     position: {
       desktop: { left: '39%', top: '10%' },
       mobile: { left: '52%', top: '14%' }
@@ -78,10 +86,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 4,
-    image: '/images/4.jpg',
+    image: `${base}images/4.jpg`,
     title: 'Вайб',
     description:
-      'Оставайся такой же яркой, вайбовой и живой. Не останавливайся — в тебе очень много крутого, что я люблю.',
+      'Оставайся такой же +вайбик.',
     position: {
       desktop: { left: '58%', top: '7%' },
       mobile: { left: '70%', top: '7%' }
@@ -96,9 +104,9 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 5,
-    image: '/images/5.jpg',
+    image: `${base}images/5.jpg`,
     title: 'Love',
-    description: 'Ты для меня очень ценна. Знай: ты самая лучшая.',
+    description: 'Ты для меня очень ценна. Знай, ты самая лучшая',
     position: {
       desktop: { left: '77%', top: '16%' },
       mobile: { left: '76%', top: '26%' }
@@ -113,10 +121,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 6,
-    image: '/images/6.jpg',
+    image: `${base}images/6.jpg`,
     title: 'Fire',
     description:
-      'Ты очень сексуальная, притягательная и живая. Хочу, чтобы ты всегда чувствовала это в себе и никогда не забывала, какая ты.',
+      'Ты очень сексуальная, притягательная и живая. Хочу, чтобы ты всегда чувствовала это в себе и никогда не забывала, какая ты',
     position: {
       desktop: { left: '11%', top: '53%' },
       mobile: { left: '14%', top: '42%' }
@@ -131,10 +139,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 7,
-    image: '/images/7.jpg',
+    image: `${base}images/7.jpg`,
     title: 'Роскошь',
     description:
-      'Желаю тебе красивой жизни, внутреннего спокойствия, удовольствия от мелочей и чтобы всё, чего ты хочешь, постепенно становилось твоим.',
+      'Желаю тебе красивой жизни, внутреннего спокойствия, удовольствия от мелочей и чтобы всё, чего ты хочешь, постепенно становилось твоим',
     position: {
       desktop: { left: '32%', top: '48%' },
       mobile: { left: '42%', top: '36%' }
@@ -149,10 +157,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 8,
-    image: '/images/8.jpg',
+    image: `${base}images/8.jpg`,
     title: 'Между нами',
     description:
-      'Мне очень нравится то, что есть между нами: вайб, притяжение и ощущение чего-то своего.',
+      'Я очень ценю то, что есть между...',
     position: {
       desktop: { left: '47%', top: '55%' },
       mobile: { left: '64%', top: '46%' }
@@ -167,7 +175,7 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 9,
-    image: '/images/9.jpg',
+    image: `${base}images/9.jpg`,
     title: 'Фокус',
     description:
       'Желаю, чтобы работа приносила тебе не только результат, но и удовольствие. А особенно желаю сил в менеджерских вопросиках )))',
@@ -185,10 +193,10 @@ const heroGalleryItems: GalleryItem[] = [
   },
   {
     id: 10,
-    image: '/images/10.jpg',
+    image: `${base}images/10.jpg`,
     title: 'Нежность',
     description:
-      'Хочется, чтобы у тебя всегда были такие моменты тишины, музыки, уюта и тепла, в которых можно просто быть собой и чувствовать себя хорошо.',
+      'Хочется, чтобы у тебя всегда были такие моменты тишины, музыки, уюта и тепла, в которых можно просто быть собой и чувствовать себя хорошо',
     position: {
       desktop: { left: '84%', top: '50%' },
       mobile: { left: '58%', top: '64%' }
@@ -206,7 +214,7 @@ const heroGalleryItems: GalleryItem[] = [
 const altGalleryItems: GalleryItem[] = [
   {
     id: 101,
-    image: '/images/1.jpg',
+    image: `${base}images/1.jpg`,
     title: 'Чилл',
     description:
       'Желаю тебе всегда находить время на отдых, кайфовать даже в самые загруженные дни',
@@ -224,7 +232,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 102,
-    image: '/images/2.jpg',
+    image: `${base}images/2.jpg`,
     title: 'Настроение',
     description:
       'Желаю тебе всегда, чтобы было из чего выбрать, и чтобы все самые крутые вещи с ламоды были только у тебя',
@@ -242,7 +250,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 103,
-    image: '/images/3.jpg',
+    image: `${base}images/3.jpg`,
     title: 'Balance',
     description:
       'Желаю тебе никогда не перерабатывать, получать удовольствие от работы и всегда держать тот самый здоровый ворк лайв баланс',
@@ -260,7 +268,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 104,
-    image: '/images/4.jpg',
+    image: `${base}images/4.jpg`,
     title: 'Вайб',
     description:
       'Оставайся такой же яркой, вайбовой и живой. Не останавливайся — в тебе очень много крутого, что я люблю',
@@ -278,7 +286,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 105,
-    image: '/images/5.jpg',
+    image: `${base}images/5.jpg`,
     title: 'Love',
     description: 'Ты для меня очень ценна. Знай: ты самая лучшая',
     position: {
@@ -295,7 +303,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 106,
-    image: '/images/6.jpg',
+    image: `${base}images/6.jpg`,
     title: 'Fire',
     description:
       'Ты очень сексуальная, притягательная и живая. Хочу, чтобы ты всегда чувствовала это в себе и никогда не забывала, какая ты',
@@ -313,7 +321,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 107,
-    image: '/images/7.jpg',
+    image: `${base}images/7.jpg`,
     title: 'Роскошь',
     description:
       'Желаю тебе красивой жизни, внутреннего спокойствия, удовольствия от мелочей и чтобы всё, чего ты хочешь, постепенно становилось твоим',
@@ -331,7 +339,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 108,
-    image: '/images/8.jpg',
+    image: `${base}images/8.jpg`,
     title: 'Между нами',
     description:
       'Мне очень нравится то, что есть между нами: вайб, притяжение и ощущение чего-то своего',
@@ -349,7 +357,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 109,
-    image: '/images/9.jpg',
+    image: `${base}images/9.jpg`,
     title: 'Фокус',
     description:
       'Желаю, чтобы работа приносила тебе не только результат, но и удовольствие. А особенно желаю сил в менеджерских вопросиках )))',
@@ -367,7 +375,7 @@ const altGalleryItems: GalleryItem[] = [
   },
   {
     id: 110,
-    image: '/images/10.jpg',
+    image: `${base}images/10.jpg`,
     title: 'Нежность',
     description:
       'Хочется, чтобы у тебя всегда были такие моменты тишины, музыки, уюта и тепла, в которых можно просто быть собой и чувствовать себя хорошо',

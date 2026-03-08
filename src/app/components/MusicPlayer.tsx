@@ -3,60 +3,24 @@ import { Volume2, VolumeX } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function MusicPlayer() {
-  /**
-   * muted:
-   * false = звук включен
-   * true  = звук выключен
-   */
   const [isMuted, setIsMuted] = useState(false);
-
-  /**
-   * ТЕКУЩАЯ ГРОМКОСТЬ.
-   * На старте ставим 0, чтобы потом плавно поднять до targetVolume.
-   */
   const [volume, setVolume] = useState(0);
-
-  /**
-   * ЦЕЛЕВАЯ ГРОМКОСТЬ ПОСЛЕ FADE-IN.
-   * 0.15 = 15%
-   * Если захочешь 20%, поменяй на 0.2
-   */
   const targetVolume = 0.15;
 
-  /**
-   * Управление видимостью панели:
-   * - на десктопе открывается по hover
-   * - на мобилке открывается по tap/click
-   */
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-
-  /**
-   * Определяем, мобильное устройство или нет.
-   * Здесь ориентируемся на ширину окна.
-   */
   const [isMobile, setIsMobile] = useState(false);
 
-  /**
-   * Ссылка на HTML audio
-   */
   const audioRef = useRef<HTMLAudioElement>(null);
-
-  /**
-   * Нужен для контейнера плеера.
-   * Используем, чтобы закрывать панель на мобилке по клику вне неё.
-   */
   const playerRef = useRef<HTMLDivElement>(null);
-
-  /**
-   * ID интервала fade-in.
-   * Через него плавно поднимаем громкость.
-   */
   const fadeIntervalRef = useRef<number | null>(null);
 
   /**
-   * Определяем mobile / desktop
+   * ВАЖНО ДЛЯ GITHUB PAGES
+   * Музыка из public/music должна грузиться через BASE_URL.
    */
+  const audioSrc = `${import.meta.env.BASE_URL}music/Sleep Token - Caramel.mp3`;
+
   useEffect(() => {
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -70,27 +34,10 @@ export function MusicPlayer() {
     };
   }, []);
 
-  /**
-   * ПЛАВНОЕ ПОДНЯТИЕ ГРОМКОСТИ С 0 ДО targetVolume
-   *
-   * Как работает:
-   * - сразу после старта ставим 0
-   * - каждые 120мс немного увеличиваем громкость
-   * - когда дошли до targetVolume — останавливаемся
-   *
-   * Если хочешь сделать fade быстрее:
-   * - увеличь шаг (step), например 0.02
-   * - или уменьши intervalMs
-   *
-   * Если хочешь сделать fade мягче и дольше:
-   * - уменьши step, например 0.005
-   * - или увеличь intervalMs
-   */
   const startFadeIn = () => {
     const audio = audioRef.current;
     if (!audio || isMuted) return;
 
-    // Если уже был старый fade — очищаем
     if (fadeIntervalRef.current) {
       window.clearInterval(fadeIntervalRef.current);
       fadeIntervalRef.current = null;
@@ -120,22 +67,16 @@ export function MusicPlayer() {
     }, intervalMs);
   };
 
-  /**
-   * Основная попытка запуска музыки при загрузке сайта
-   */
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // На старте музыка не в mute
     audio.muted = false;
     setIsMuted(false);
 
-    // На старте громкость 0 — для fade-in
     audio.volume = 0;
     setVolume(0);
 
-    // Заранее подгружаем аудио
     audio.load();
 
     const tryAutoplay = async () => {
@@ -149,10 +90,6 @@ export function MusicPlayer() {
 
     tryAutoplay();
 
-    /**
-     * Если autoplay заблокировали,
-     * после первого взаимодействия пробуем снова.
-     */
     const handleFirstInteraction = async () => {
       try {
         audio.muted = false;
@@ -185,27 +122,16 @@ export function MusicPlayer() {
     };
   }, []);
 
-  /**
-   * Если пользователь сам меняет громкость —
-   * обновляем audio.volume
-   */
   useEffect(() => {
     if (!audioRef.current) return;
     audioRef.current.volume = volume;
   }, [volume]);
 
-  /**
-   * Если пользователь нажал mute/unmute —
-   * обновляем audio.muted
-   */
   useEffect(() => {
     if (!audioRef.current) return;
     audioRef.current.muted = isMuted;
   }, [isMuted]);
 
-  /**
-   * Закрытие мобильной панели по клику вне плеера
-   */
   useEffect(() => {
     if (!isMobileOpen) return;
 
@@ -225,14 +151,6 @@ export function MusicPlayer() {
     };
   }, [isMobileOpen]);
 
-  /**
-   * Кнопка mute/unmute
-   *
-   * Что делает:
-   * - если аудио стоит на паузе, пытается включить
-   * - переключает muted
-   * - если включаем звук и громкость 0, возвращаем её на targetVolume
-   */
   const toggleMute = async () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -249,21 +167,12 @@ export function MusicPlayer() {
     setIsMuted(nextMuted);
     audio.muted = nextMuted;
 
-    // Если звук включаем обратно и громкость 0 — возвращаем рабочую громкость
     if (!nextMuted && audio.volume === 0) {
       audio.volume = targetVolume;
       setVolume(targetVolume);
     }
   };
 
-  /**
-   * Ползунок громкости
-   *
-   * Если пользователь меняет громкость:
-   * - обновляем volume
-   * - если громкость 0 => ставим mute
-   * - если громкость больше 0 => снимаем mute
-   */
   const handleVolumeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     const newVolume = parseFloat(e.target.value);
@@ -291,16 +200,8 @@ export function MusicPlayer() {
     }
   };
 
-  /**
-   * На десктопе панель открыта, когда есть hover
-   * На мобилке — когда пользователь тапнул по плееру
-   */
   const isPanelVisible = isMobile ? isMobileOpen : isHovered;
 
-  /**
-   * Клик по самому контейнеру на мобилке:
-   * открывает / закрывает панель
-   */
   const handleContainerClick = () => {
     if (!isMobile) return;
     setIsMobileOpen((prev) => !prev);
@@ -324,7 +225,6 @@ export function MusicPlayer() {
       <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-3 flex items-center gap-3 cursor-pointer">
         <button
           onClick={(e) => {
-            // Чтобы клик по кнопке не дёргал мобильное раскрытие дважды
             e.stopPropagation();
             toggleMute();
           }}
@@ -370,15 +270,7 @@ export function MusicPlayer() {
       </div>
 
       <audio ref={audioRef} loop preload="auto">
-        {/**
-         * ПУТЬ К МУЗЫКЕ
-         *
-         * Сейчас ожидается, что файл лежит здесь:
-         * public/music/Sleep Token - Caramel.mp3
-         *
-         * Если переименуешь файл, поменяй src ниже.
-         */}
-        <source src="/music/Sleep Token - Caramel.mp3" type="audio/mpeg" />
+        <source src={audioSrc} type="audio/mpeg" />
         Ваш браузер не поддерживает аудио.
       </audio>
     </motion.div>
